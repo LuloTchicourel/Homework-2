@@ -18,15 +18,15 @@ public:
 
     void print();
     
-    void change_hour(int new_h);
-    void change_minute(int new_m);
-    void change_second(int new_s);
-    void change_period(string new_p);
+    void set_hour(int new_h);
+    void set_minute(int new_m);
+    void set_second(int new_s);
+    void set_period(string new_p);
 
-    void peek_hour();
-    void peek_minute();
-    void peek_second();
-    void peek_period();
+    void get_hour();
+    void get_minute();
+    void get_second();
+    void get_period();
 
     void military_time();
 };

@@ -9,10 +9,10 @@ int main() {
         cout << "3. Initializing with hour and minute\n";
         cout << "4. Initializing with hour, minute and second\n";
         cout << "5. Initializing with hour, minute, second and period\n";
-        cout << "6. Changing and peeking individual values\n";
+        cout << "6. Setting and getting individual values\n";
         cout << "7. Military time format\n";
         cout << "0. Exit\n";
-        cout << "Select an option: ";
+        cout << "Select an option: " << endl;
         cin >> option;
         cout << "\n";
 
@@ -53,23 +53,56 @@ int main() {
             t.print();
 
             int h, m, s; string p;
-            cout << "New hour: "; cin >> h;
-            t.change_hour(h);
-            cout << "New minute: "; cin >> m;
-            t.change_minute(m);
-            cout << "New second: "; cin >> s;
-            t.change_second(s);
-            cout << "New period: "; cin >> p;
-            t.change_period(p);
+            vector<string> possibilities = {"hour", "minute", "second", "period"};
+            for (int i = 0; i < possibilities.size(); i++){
+                string answer = "";
+                while (true){
+                    cout << "Would you like to set the " << possibilities[i] << "? (y/n)\n";
+                    cin >> answer;
+                    if (answer == "y"){
+                        if (possibilities[i] == "hour"){
+                            cout << "New hour: "; cin >> h;
+                            t.set_hour(h);
+                        }
+                        else if (possibilities[i] == "minute"){
+                            cout << "New minute: "; cin >> m;
+                            t.set_minute(m);    
+                        }
+                        else if (possibilities[i] == "second"){
+                            cout << "New second: "; cin >> s;
+                            t.set_second(s);    
+                        }
+                        else if (possibilities[i] == "period"){
+                            cout << "New period: "; cin >> p;
+                            t.set_period(p);
+                        }
+                        break;
+                    }
+                    else if (answer == "n") break;
+                    else cout << "Invalid answer, please try again...\n";
+                }
+            }
 
             t.print();
 
-            cout << "\nPeeking values:\n";
-            t.peek_hour();
-            t.peek_minute();
-            t.peek_second();
-            t.peek_period();
-        } else if (option == 7) {
+            for (int i = 0; i < possibilities.size(); i++) {
+                string answer = "";
+                while (true) {
+                    cout << "Would you like to get the " << possibilities[i] << "? (y/n)\n";
+                    cin >> answer;
+                    if (answer == "y") {
+                        if (possibilities[i] == "hour") t.get_hour();
+                        else if (possibilities[i] == "minute") t.get_minute();
+                        else if (possibilities[i] == "second") t.get_second();
+                        else if (possibilities[i] == "period") t.get_period();
+                        break;
+                    }
+                    else if (answer == "n") break;
+                    else cout << "Invalid answer, please try again...\n";
+                }
+            }
+        } 
+        else if (option == 7) {
             int h, m, s; string p;
             cout << "Hour: "; cin >> h;
             cout << "Minute: "; cin >> m;
@@ -78,11 +111,9 @@ int main() {
             Time t(h, m, s, p);
             cout << "Military time:\n\n";
             t.military_time();
-        } else if (option == 0) {
-            cout << "Exiting program...\n";
-        } else {
-            cout << "\nInvalid option. Try again.\n";
-        }
+        } 
+        else if (option == 0) cout << "Exiting program...\n";
+        else cout << "\nInvalid option. Try again.\n";
     }
 
     return 0;

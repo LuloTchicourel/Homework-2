@@ -61,7 +61,7 @@ void Time::print() {
          << setw(2) << second << "s " << period << endl;
 }
 
-void Time::change_hour(int new_h) {
+void Time::set_hour(int new_h) {
     if (new_h < 0 || new_h > 12) {
         cout << "Invalid hour (" << new_h << "). Try again.\n";
         while (new_h < 0 || new_h > 12) {
@@ -71,7 +71,7 @@ void Time::change_hour(int new_h) {
     hour = new_h;
 }
 
-void Time::change_minute(int new_m) {
+void Time::set_minute(int new_m) {
     if (new_m < 0 || new_m > 59) {
         cout << "Invalid minute (" << new_m << "). Try again.\n";
         while (new_m < 0 || new_m > 59) {
@@ -81,7 +81,7 @@ void Time::change_minute(int new_m) {
     minute = new_m;
 }
 
-void Time::change_second(int new_s) {
+void Time::set_second(int new_s) {
     if (new_s < 0 || new_s > 59) {
         cout << "Invalid second (" << new_s << "). Try again.\n";
         while (new_s < 0 || new_s > 59) {
@@ -91,7 +91,7 @@ void Time::change_second(int new_s) {
     second = new_s;
 }
 
-void Time::change_period(string new_p) {
+void Time::set_period(string new_p) {
     if (new_p != "a.m." && new_p != "p.m.") {
         cout << "Invalid period (" << new_p << "). Try again.\n";
         while (new_p != "a.m." && new_p != "p.m.") {
@@ -101,19 +101,19 @@ void Time::change_period(string new_p) {
     period = new_p;
 }
 
-void Time::peek_hour() {
+void Time::get_hour() {
     cout << "Hour: " << setw(2) << setfill('0') << hour << "h" << endl;
 }
 
-void Time::peek_minute() {
+void Time::get_minute() {
     cout << "Minute: " << setw(2) << setfill('0') << minute << "m" << endl;
 }
 
-void Time::peek_second() {
+void Time::get_second() {
     cout << "Second: " << setw(2) << setfill('0') << second << "s" << endl;
 }
 
-void Time::peek_period() {
+void Time::get_period() {
     cout << "Period: " << period << endl;
 }
 
