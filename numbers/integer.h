@@ -6,10 +6,10 @@ class Integer : public Number {
     public:
         Integer(int v);
 
-        Number* add(const Number& num) const override;
-        Number* subtract(const Number& num) const override;
-        Number* multiply(const Number& num) const override;
-        Number* divide(const Number& num) const override;
+        unique_ptr<Number> add(const Number& num) const override;
+        unique_ptr<Number> subtract(const Number& num) const override;
+        unique_ptr<Number> multiply(const Number& num) const override;
+        unique_ptr<Number> divide(const Number& num) const override;
         string to_string() const override;
 
         ~Integer() override = default;

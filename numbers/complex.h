@@ -7,10 +7,10 @@ class Complex : public Number {
     public:
         Complex(float r, float i);
 
-        Number* add(const Number& num) const override;
-        Number* subtract(const Number& num) const override;
-        Number* multiply(const Number& num) const override;
-        Number* divide(const Number& num) const override;
+        unique_ptr<Number> add(const Number& num) const override;
+        unique_ptr<Number> subtract(const Number& num) const override;
+        unique_ptr<Number> multiply(const Number& num) const override;
+        unique_ptr<Number> divide(const Number& num) const override;
         string to_string() const override;
 
         ~Complex() override = default;
