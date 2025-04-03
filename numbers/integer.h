@@ -1,15 +1,18 @@
 #include "number.h"
 
-using namespace std;
-
 class Integer : public Number {
-    private:
+    private: 
         int value;
     public:
-        Integer(int value);
+        Integer(int v);
 
-        Number* add(const Number& other) const override;
-        Number* subtract(const Number& other) const override;
-        Number* multiply(const Number& other) const override;
-        Number* divide(const Number& other) const override;
+        Number* add(const Number& num) const override;
+        Number* subtract(const Number& num) const override;
+        Number* multiply(const Number& num) const override;
+        Number* divide(const Number& num) const override;
+        string to_string() const override;
+
+        ~Integer() override = default;
+
+        int get_value();
 };
