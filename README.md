@@ -1,5 +1,5 @@
 Ejercicio 1:
-g++ -std=c++14 time.cpp timefuncs.cpp -o time_program
+g++ -std=c++14 time.cpp timefuncs.cpp -o time
 
 ./time
 
@@ -21,3 +21,8 @@ Ejercicio 3:
 g++ -std=c++17 -Wall numbers.cpp intfuncs.cpp realfuncs.cpp complexfuncs.cpp -o nums
 
 ./nums
+
+Ejercicio 4:
+g++ -std=c++17 -Wall bank.cpp accountfuncs.cpp checkingfuncs.cpp savingsfuncs.cpp -o bank
+
+./bank
