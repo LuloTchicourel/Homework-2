@@ -16,3 +16,8 @@ Justificacion del copy:
 La copia realizada es una shallow copy ya que no se crea una duplicacion del elemento, sino se
 agrega la referencia mediante punteros.
 Esto nos sirve en el contexto de mi codigo ya que queremos que el mismo alumno coexista en diferentes cursos, y que este pueda ser modificado globalmente. Si se desincribe de una clase, luego cuando vemos las clases que tenga (accediendo de otro curso) podemos ver que efectivamente se perdio ese vinculo, lo cual es lo que buscamos.
+
+Ejercicio 3:
+g++ -std=c++17 -Wall numbers.cpp intfuncs.cpp realfuncs.cpp complexfuncs.cpp -o nums
+
+./nums

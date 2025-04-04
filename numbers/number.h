@@ -15,3 +15,4 @@ class Number{
 
         virtual ~Number() = default;
 };
+
